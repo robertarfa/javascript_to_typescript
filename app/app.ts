@@ -7,9 +7,5 @@ const form = document.querySelector('.form');
 //todo element tem um addEventListener
 form.addEventListener('submit', (event: Event) => {
   event.preventDefault();
-  controller.add();
+  controller.adiciona();
 });
-
-// const negociacoesView = new NegociacoesView();
-// const template = negociacoesView.template();
-// console.log(template);
