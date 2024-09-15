@@ -16,4 +16,18 @@ export class Negociacao {
   public get volume(): number {
     return this.quantidade * this.valor;
   }
+
+  //metodos estaticos podem ser chamados direto da classe
+  public static criaDe(
+    dataString: string,
+    quantidadeString: string,
+    valorString: string
+  ): Negociacao {
+    const exp = /-/g;
+    const date = new Date(dataString.replace(exp, ','));
+    const quantidade = parseInt(quantidadeString);
+    const valor = parseFloat(valorString);
+
+    return new Negociacao(date, quantidade, valor);
+  }
 }

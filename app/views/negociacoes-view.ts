@@ -22,7 +22,8 @@ export class NegociacoesView extends View<Negociacoes> {
           <td>${this.conversorDeData(negociacao.data)}</td>
           <td>${negociacao.quantidade}</td>
           <td>${negociacao.valor}</td>
-        </tr>`;
+        </tr>
+        `;
         })
         .join('')}
        
