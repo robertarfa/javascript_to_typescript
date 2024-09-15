@@ -1,3 +1,5 @@
+import { logarTempoDeExecucao } from '../decorators/logar-tempo-de-execucao.js';
+
 export abstract class View<T> {
   //não pode criar uma instância diretamente de uma classe abstsrata
   protected elemento: HTMLElement;
@@ -21,7 +23,7 @@ export abstract class View<T> {
 
   protected abstract template(model: T): string;
   //vai mostrar o erro em tempo de desenvolvimento no terminal, antes de mostrar no console da aplicação
-
+  @logarTempoDeExecucao()
   public update(model: T): void {
     let template = this.template(model);
 
