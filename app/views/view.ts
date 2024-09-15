@@ -6,7 +6,12 @@ export abstract class View<T> {
 
   //? serve pra colocar o parâmetro como opcional, opcional não funciona como primeiro parâmetro, e precisa sempre ficar por último
   constructor(seletor: string, escapar?: boolean) {
-    this.elemento = document.querySelector(seletor);
+    const elemento = document.querySelector(seletor);
+    if (elemento) {
+      this.elemento = elemento as HTMLElement;
+    } else {
+      throw new Error(`Seletor ${seletor} não existe!`);
+    }
 
     //o parâmetro é opcional , mas se não for definido, ficará undefined
     if (escapar) {
