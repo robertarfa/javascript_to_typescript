@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "dist/js",
+    "outDir": "app/dist/js",
     "target": "ES6",
     "noEmitOnError": true, //não vai gerar dist/js enquanto o typescript não estiver correto
     "noImplicitAny": true,
