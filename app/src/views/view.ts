@@ -24,8 +24,6 @@ export abstract class View<T> {
   protected abstract template(model: T): string;
   //vai mostrar o erro em tempo de desenvolvimento no terminal, antes de mostrar no console da aplicação
 
-  @logarTempoDeExecucao(true)
-  @inspect
   public update(model: T): void {
     let template = this.template(model);
 
