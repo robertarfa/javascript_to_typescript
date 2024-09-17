@@ -44,7 +44,16 @@ export class NegociacaoController {
         this.mensagemView.update('Negociação adicionada com sucesso!');
     }
     importarDados() {
-        this.negociacaoService.obterNegociacoesDoDia().then((negociacoesDehoje) => {
+        this.negociacaoService
+            .obterNegociacoesDoDia()
+            .then((negociacoesDeHoje) => {
+            return negociacoesDeHoje.filter((negociacoesDeHoje) => {
+                return !this.negociacoes
+                    .lista()
+                    .some((negociacao) => negociacao.ehIgual(negociacoesDeHoje));
+            });
+        })
+            .then((negociacoesDehoje) => {
             for (let negociacao of negociacoesDehoje) {
                 this.negociacoes.adiciona(negociacao);
             }
