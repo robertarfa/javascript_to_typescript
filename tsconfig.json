@@ -5,7 +5,9 @@
     "noEmitOnError": true, //não vai gerar dist/js enquanto o typescript não estiver correto
     "noImplicitAny": true,
     "removeComments": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "experimentalDecorators": true,
+    "sourceMap": true
   },
   "include": ["app/**/*"],
   "exclude": ["node_modules"]
