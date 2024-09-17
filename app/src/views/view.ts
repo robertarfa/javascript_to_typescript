@@ -1,6 +1,3 @@
-import { inspect } from '../decorators/inspect.js';
-import { logarTempoDeExecucao } from '../decorators/logar-tempo-de-execucao.js';
-
 export abstract class View<T> {
   //não pode criar uma instância diretamente de uma classe abstsrata
   protected elemento: HTMLElement;
